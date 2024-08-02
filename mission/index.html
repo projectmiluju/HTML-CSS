@@ -2,15 +2,57 @@
 <html lang="en">
 <head>
     <title>My Page</title>
+    <style>
+
+        .a-text {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 600;
+            font-size: 36px;
+
+            font-style: italic;
+            text-align: center;
+            line-height: 18px;
+
+            text-decoration: underline;
+            text-decoration: none;
+        }
+
+
+        .container {
+            border: 5px solid black;
+            background-color: lightblue;
+            padding: 5px;
+            margin-bottom: 15px;
+            width: 400px;
+            height: 100px;
+        }
+
+        .container:hover {
+            background-color: lightcoral;
+        }
+
+        .example {
+            border: 5px solid black;
+            padding: 5px;
+            background-color: lightcoral;
+            background-clip: padding-box;
+            width: 400px;
+        }
+        
+    </style>
 </head>
 <body>
-    <h1>My Page</h1>
+    <div class="container container-box">
+        <p class="a-text">
+            My Page
+        </p>
+    </div>
 
     <h2>Hello!</h2>
     <p>안녕하세요. 저는 풀스택 개발자를 꿈꾸는 <b>정원용</b>이라고 합니다.</p>
 
-    <div>
-        <d><b>Stack</b></d>
+    <div class="example">
+        <b>Stack</b>
         <li>Java</li>
         <li>Spring</li>
         <li>JavaScript</li>
