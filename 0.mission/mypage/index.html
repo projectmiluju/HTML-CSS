@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@600&display=swap" rel="stylesheet">
     <style>
-
         .a-text {
             font-family: 'Noto Sans KR', sans-serif;
             font-weight: 600;
             font-size: 36px;
-
             font-style: italic;
             text-align: center;
-            line-height: 18px;
-
-            text-decoration: underline;
-            text-decoration: none;
+            line-height: 1.4;
+            transition: color 0.3s;
         }
 
+        .a-text:hover {
+            color: darkblue;
+            text-decoration: underline;
+        }
 
         .container {
             border: 5px solid black;
@@ -28,7 +31,7 @@
         }
 
         .container:hover {
-            background-color: lightcoral;
+            background-color: lightseagreen;
         }
 
         .example {
@@ -38,12 +41,26 @@
             background-clip: padding-box;
             width: 400px;
         }
-        
+
+        .color-change-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: lightgreen;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+
+        .color-change-button:hover {
+            background-color: limegreen;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container container-box">
-        <p class="a-text">
+    <div class="container">
+        <p class="a-text" id="myText">
             My Page
         </p>
     </div>
@@ -53,11 +70,34 @@
 
     <div class="example">
         <b>Stack</b>
-        <li>Java</li>
-        <li>Spring</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <ul>
+            <li>Java</li>
+            <li>Spring</li>
+            <li>JavaScript</li>
+            <li>React</li>
+        </ul>
     </div>
+
+<!-- 과제 추가 부분 DOM 트리에서 요소 선택하고 조작하기  -->
+    <button class="color-change-button" id = colorChangeButton>눌러 보세요</button>
+
+    <script>
+        const myText = document.getElementById('myText'); 
+        const colorChangeButton = document.getElementById('colorChangeButton');
+
+        const originalColor = 'black';
+        const originalText = 'My Page';
+
+        colorChangeButton.addEventListener('click', function() {
+            if (myText.style.color === 'yellow') {
+                myText.style.color = originalColor;
+                myText.innerText = originalText;
+            } else {
+                myText.style.color = 'yellow';
+                myText.innerText = '나의 웹 사이트';
+            }
+        });
+    </script>
 
 </body>
 </html>
